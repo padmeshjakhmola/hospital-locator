@@ -9,7 +9,14 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app needs access to your location to find nearby hospitals.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app needs access to your location to find nearby hospitals."
+      },
+      "config": {
+        "googleMapsApiKey": "$EXPO_PUBLIC_GOOGLE_API_KEY"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +25,19 @@
       },
       "edgeToEdgeEnabled": true,
       "package": "com.prankshadow.hospitallocator",
-      "googleServicesFile": "./google-services.json"
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "$EXPO_PUBLIC_GOOGLE_API_KEY"
+        }
+      }
     },
     "web": {
       "bundler": "metro",
@@ -27,8 +46,6 @@
     },
     "plugins": [
       "expo-router",
-      "@react-native-firebase/app",
-      "@react-native-firebase/auth",
       "@react-native-google-signin/google-signin",
       [
         "expo-splash-screen",
@@ -39,7 +56,19 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-maps"
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Hospital Locator to use your location to find nearby hospitals.",
+          "locationWhenInUsePermission": "Allow Hospital Locator to use your location to find nearby hospitals."
+        }
+      ],
+      [
+        "expo-maps",
+        {
+          "googleMapsApiKey": "$EXPO_PUBLIC_GOOGLE_API_KEY"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
