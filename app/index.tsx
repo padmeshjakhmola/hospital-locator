@@ -1,15 +1,22 @@
 import icons from "@/constants/icons";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { login } from "@/lib/appwrite";
+import { useGlobalContext } from "@/lib/global-provider";
+import { Redirect } from "expo-router";
+import { Alert, Image, Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
+  const { refetch, loading, isLoggedIn } = useGlobalContext();
+
+  if (!loading && isLoggedIn) return <Redirect href="/map" />;
+
   const handleLogin = async () => {
-    // const result = await login();
-    // if (result) {
-    //   console.log("Login Success");
-    //   refetch();
-    // } else {
-    //   Alert.alert("Error", "Failed to login");
-    // }
+    const result = await login();
+    refetch();
+    if (result) {
+      console.log("Login Success");
+    } else {
+      Alert.alert("Error", "Failed to login");
+    }
   };
 
   return (
