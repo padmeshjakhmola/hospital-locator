@@ -1,3 +1,4 @@
+import AreaMap from "@/components/AreaMap";
 import { logout } from "@/lib/appwrite";
 import { useGlobalContext } from "@/lib/global-provider";
 import { Redirect } from "expo-router";
@@ -22,16 +23,19 @@ const Map = () => {
   };
 
   return (
-    <SafeAreaView className="flex flex-col items-center justify-center h-screen">
-      <Text className="text-2xl font-rubik-bold mt-2">
-        Hello! {user?.name}👋
-      </Text>
-      <TouchableOpacity>
-        <Text className="text-xl text-red-600" onPress={handleLogout}>
-          Logout
+    <>
+      <SafeAreaView className="items-center justify-center">
+        <Text className="text-2xl font-rubik-bold mt-2">
+          Hello! {user?.name}👋
         </Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+        <TouchableOpacity>
+          <Text className="text-xl text-red-600" onPress={handleLogout}>
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+      <AreaMap />
+    </>
   );
 };
 
