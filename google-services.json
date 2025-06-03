@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "44850934874",
+    "project_id": "hospitalsearch-f71f7",
+    "storage_bucket": "hospitalsearch-f71f7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44850934874:android:6136a0427461597721d463",
+        "android_client_info": {
+          "package_name": "com.prankshadow.hospitallocator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44850934874-kpq28scfhkthit9lr5ku0vlp4ps647rk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prankshadow.hospitallocator",
+            "certificate_hash": "c0f095ae5db85db7addf1fe7ad659eb1ca0f757b"
+          }
+        },
+        {
+          "client_id": "44850934874-pnimit7joe1hufbbjl0scjocsd8fflnf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARL_RJXHd566-FhZCNrO9jlww2FCT_3T8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44850934874-pnimit7joe1hufbbjl0scjocsd8fflnf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
